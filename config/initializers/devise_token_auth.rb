@@ -9,6 +9,9 @@ DeviseTokenAuth.setup do |config|
   # habilita o Token Refresh, para que o token seja modificado a cada request.
   config.change_headers_on_each_request = true
 
+  # configuração para garantir que o token para troca de senha seja obrigatório
+  config.require_client_password_reset_token = true
+
   # By default, users will need to re-authenticate after 2 weeks. This setting
   # determines how long tokens will remain valid after they are issued.
   config.token_lifespan = 1.weeks
