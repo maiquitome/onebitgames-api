@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
+  # o build não salva no banco de dados, ao contrário de create(:something)
+  subject { build(:product) }
+
   it { is_expected.to validate_presence_of(:name) }
   it { is_expected.to validate_uniqueness_of(:name).case_insensitive }
   it { is_expected.to validate_presence_of(:description) }
